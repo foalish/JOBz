@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -25,7 +26,11 @@ import java.util.Map;
 
 public class Chat_sign_up extends AppCompatActivity {
 
-    EditText email, username, password, birthdate, gender;
+    EditText email;
+    EditText username;
+    EditText password;
+    EditText birthdate;
+    Switch gender;
     Button insert, show;
     TextView result;
     RequestQueue requestQueue;
@@ -41,7 +46,7 @@ public class Chat_sign_up extends AppCompatActivity {
         username =  (EditText) findViewById(R.id.inputUsername);
         password =  (EditText) findViewById(R.id.inputPassword);
         birthdate = (EditText) findViewById(R.id.inputBirthdate);
-        gender =    (EditText) findViewById(R.id.inputGender);
+        gender =    (Switch) findViewById(R.id.inputGender);
 
         insert = (Button)   findViewById(R.id.sign_up);
     //    show = (Button)   findViewById(R.id.show);
@@ -49,6 +54,7 @@ public class Chat_sign_up extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
+    //  following section of code is not currently used as no showusers button in the UI.
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
