@@ -40,6 +40,26 @@ public class MainActivity extends Activity {
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
+
+      // ---------
+
+
+        TextView loginScreen = (TextView) findViewById(R.id.link_to_login);
+
+        // Listening for Login Screen link
+        loginScreen.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                // Closing registration screen
+                // Switching to Login Screen/closing register screen
+                finish();
+            }
+        });
+
+        // --------
+
+
+
         // Download JSON file AsyncTask
         new DownloadJSON().execute();
     }

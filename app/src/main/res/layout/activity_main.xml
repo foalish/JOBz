@@ -177,7 +177,16 @@
         android:layout_height="wrap_content">
     </android.support.v7.widget.Toolbar>
 
-
+    <TextView android:id="@+id/link_to_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:layout_marginBottom="40dip"
+        android:text="Already has account! Login here"
+        android:layout_below="@+id/degree"
+        android:gravity="center"
+        android:textSize="20dip"
+        android:textColor="#025f7c"/>
 
 
 </RelativeLayout>
