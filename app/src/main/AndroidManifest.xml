@@ -13,15 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
-        <activity android:name=".MainActivity"
-            android:label="My dream job is..." >
 
+        <activity android:name=".Chat_sign_up"
+            android:label="Sign Up!"  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="My dream job is...">
+        </activity>
+
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="d120b2f6e40271fb3ee090ffae8c3e345fb1dfe8" />

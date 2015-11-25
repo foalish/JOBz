@@ -126,6 +126,9 @@ public class Chat_sign_up extends AppCompatActivity {
 
         });
 
+
+
+
     }
 }
 
