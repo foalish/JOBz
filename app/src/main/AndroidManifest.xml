@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.david.jobz" >
+    package="com.david.jobz"
 
-    <uses-sdk    />
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <uses-sdk/>
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,19 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
+        <activity
+            android:name=".MainActivity"
+            android:label="Search by Spinner!"  >
 
-        <activity android:name=".Chat_sign_up"
-            android:label="Sign Up!"  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="My dream job is...">
-        </activity>
 
+        <activity android:name=".OrderScreen"
+                  android:label="This_IS_the_second_page!">
+        </activity>
 
         <meta-data
             android:name="io.fabric.ApiKey"

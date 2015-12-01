@@ -2,12 +2,14 @@ package com.david.jobz;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,6 +26,7 @@ import java.util.List;
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends Activity {
+
     JSONObject jsonobject;
     JSONArray jsonarray;
     ProgressDialog mProgressDialog;
@@ -40,24 +43,16 @@ public class MainActivity extends Activity {
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
+        Button orderButton = (Button)findViewById(R.id.login);
+        orderButton.setOnClickListener(new View.OnClickListener() {
 
-      // ---------
-
-
-        TextView loginScreen = (TextView) findViewById(R.id.link_to_login);
-
-        // Listening for Login Screen link
-        loginScreen.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View arg0) {
-                // Closing registration screen
-                // Switching to Login Screen/closing register screen
-                finish();
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, OrderScreen.class);
+                startActivity(intent);
             }
+
         });
-
-        // --------
-
 
 
         // Download JSON file AsyncTask
@@ -66,7 +61,7 @@ public class MainActivity extends Activity {
 
     // Download JSON file AsyncTask
     private class DownloadJSON extends AsyncTask<Void, Void, Void> {
-
+        public final static String EXTRA_MESSAGE = "com.david.jobz.MESSAGE";
         @Override
         protected Void doInBackground(Void... params) {
             // Locate the WorldPopulation Class
@@ -175,6 +170,8 @@ public class MainActivity extends Activity {
                             // TODO Auto-generated method stub
                         }
                     });
+
+
         }
 
     }
