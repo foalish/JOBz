@@ -26,8 +26,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".OrderScreen"
-                  android:label="This_IS_the_second_page!">
+        <activity android:name=".LoginActivity"
+                  android:label="This_IS_the_login_page!">
+        </activity>
+
+        <activity android:name=".Chat_sign_up"
+                  android:label="This_IS_the_signup_page!">
         </activity>
 
         <meta-data

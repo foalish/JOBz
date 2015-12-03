@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, OrderScreen.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
 

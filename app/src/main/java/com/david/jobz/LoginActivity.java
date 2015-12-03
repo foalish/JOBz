@@ -1,5 +1,6 @@
 package com.david.jobz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -26,8 +28,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
 
-    EditText username;
-    EditText password;
+    EditText username, password;
     Button insert, show;
     TextView result;
     RequestQueue requestQueue;
@@ -39,18 +40,27 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        Button orderButton = (Button)findViewById(R.id.link_to_signup);
+        orderButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, Chat_sign_up.class);
+                startActivity(intent);
+            }
+
+        });
 
         username =  (EditText) findViewById(R.id.inputUsername);
         password =  (EditText) findViewById(R.id.inputPassword);
-
-        insert = (Button)   findViewById(R.id.takemetochat);
-        insert = (Button)   findViewById(R.id.jobsbutton);
-        //    show = (Button)   findViewById(R.id.show);
-        result = (TextView) findViewById(R.id.textView);
+        //    insert   = (Button)    findViewById(R.id.takemetochat);
+        //    insert   = (Button)    findViewById(R.id.jobsbutton);
+        insert   = (Button)    findViewById(R.id.insert);
+        show     = (Button)    findViewById(R.id.show);
+        result   = (TextView)  findViewById(R.id.email_label );
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        //  following section of code is not currently used as no showusers button in the UI.
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

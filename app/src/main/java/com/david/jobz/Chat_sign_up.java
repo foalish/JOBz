@@ -40,21 +40,20 @@ public class Chat_sign_up extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.chat_sign_up);
 
-        email =     (EditText) findViewById(R.id.inputEmail);
-        username =  (EditText) findViewById(R.id.inputUsername);
-        password =  (EditText) findViewById(R.id.inputPassword);
-        birthdate = (EditText) findViewById(R.id.inputBirthdate);
-        gender =    (Switch) findViewById(R.id.inputGender);
+        email     =  (EditText) findViewById(R.id.inputEmail);
+        username  =  (EditText) findViewById(R.id.inputUsername);
+        password  =  (EditText) findViewById(R.id.inputPassword);
+        birthdate =  (EditText) findViewById(R.id.inputBirthdate);
+        gender    =  (Switch)   findViewById(R.id.inputGender);
 
-        insert = (Button)   findViewById(R.id.sign_up);
-    //    show = (Button)   findViewById(R.id.show);
-        result = (TextView) findViewById(R.id.textView);
+        insert    =  (Button)   findViewById(R.id.sign_up);
+        show      =  (Button)   findViewById(R.id.show);
+        result    =  (TextView) findViewById(R.id.email_label );
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-    //  following section of code is not currently used as no showusers button in the UI.
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
