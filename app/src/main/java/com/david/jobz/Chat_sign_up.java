@@ -134,7 +134,7 @@ public class Chat_sign_up extends AppCompatActivity {
                         parameters.put("birthdate",birthdate.getText().toString());
                         parameters.put("gender",   gender.getText().toString());
                         return parameters;
-                    }
+                     }
                 };
                 requestQueue.add(request);
             }
