@@ -96,6 +96,7 @@
         android:gravity="center"
         android:textSize="15sp"
         android:textColor="#ffffff"
+        android:background="#b36da6"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 

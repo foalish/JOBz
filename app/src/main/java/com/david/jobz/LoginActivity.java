@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     String insertUrl = "http://217.199.187.199/robswebdevelopercourse.com/social_network/insertUser.php";
     String showUrl =   "http://217.199.187.199/robswebdevelopercourse.com/social_network/showUsers.php";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

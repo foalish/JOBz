@@ -1,5 +1,6 @@
 package com.david.jobz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,8 +28,8 @@ import java.util.Map;
 public class Chat_sign_up extends AppCompatActivity {
 
     EditText email;
-    EditText username;
-    EditText password;
+    EditText name;
+    EditText pass;
     EditText birthdate;
     Switch gender;
     Button insert, show;
@@ -42,13 +43,34 @@ public class Chat_sign_up extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_sign_up);
 
-        email     =  (EditText) findViewById(R.id.inputEmail);
-        username  =  (EditText) findViewById(R.id.inputUsername);
-        password  =  (EditText) findViewById(R.id.inputPassword);
-        birthdate =  (EditText) findViewById(R.id.inputBirthdate);
-        gender    =  (Switch)   findViewById(R.id.inputGender);
+   //     Button orderButton = (Button)findViewById(R.id.sign_up);
+   //     orderButton.setOnClickListener(new View.OnClickListener() {
 
-        insert    =  (Button)   findViewById(R.id.sign_up);
+   //         @Override
+    //        public void onClick(View view) {
+
+   //             Intent intent = new Intent( Chat_sign_up.this, ChatActivity.class );
+    //            startActivity( intent );
+   //         }
+   //    });
+
+        Button orderButton2 = (Button)findViewById(R.id.link_to_login);
+        orderButton2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent( Chat_sign_up.this, LoginActivity.class );
+                startActivity( intent );
+            }
+        });
+
+        email     =  (EditText) findViewById(R.id.inputEmail);
+        name      =  (EditText) findViewById(R.id.inputUsername);
+        pass      =  (EditText) findViewById(R.id.inputPassword);
+        birthdate =  (EditText) findViewById(R.id.inputBirthdate);
+       //   gender    =  (Switch)   findViewById(R.id.inputGender);
+        insert    =  (Button)   findViewById(R.id.insert);
         show      =  (Button)   findViewById(R.id.show);
         result    =  (TextView) findViewById(R.id.email_label );
 
@@ -67,25 +89,22 @@ public class Chat_sign_up extends AppCompatActivity {
                                 JSONObject user = users.getJSONObject(i);
 
                                 String email     =  user.getString("inputEmail");
-                                String username  =  user.getString("inputUsername");
-                                String password  =  user.getString("inputPassword");
+                                String name      =  user.getString("inputUsername");
+                                String pass      =  user.getString("inputPassword");
                                 String birthdate =  user.getString("inputBirthdate");
                                 String gender    =  user.getString("inputGender");
-
-                                result.append(email + " " + username + "" + password + birthdate + " " + gender + "\n");
+                                result.append(email + " " + name + "" + pass + birthdate + " " + gender + "\n");
                             }
                             result.append("===\n");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         System.out.append(error.getMessage());
-
                     }
                 });
                 requestQueue.add(jsonObjectRequest);
@@ -98,13 +117,11 @@ public class Chat_sign_up extends AppCompatActivity {
                 StringRequest request = new StringRequest(Request.Method.POST, insertUrl, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
                         System.out.println(response.toString());
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                     }
                 }) {
 
@@ -112,17 +129,20 @@ public class Chat_sign_up extends AppCompatActivity {
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> parameters = new HashMap<String, String>();
                         parameters.put("email",    email.getText().toString());
-                        parameters.put("username", username.getText().toString());
-                        parameters.put("password", password.getText().toString());
+                        parameters.put("name",     name.getText().toString());
+                        parameters.put("pass",     pass.getText().toString());
                         parameters.put("birthdate",birthdate.getText().toString());
                         parameters.put("gender",   gender.getText().toString());
-
                         return parameters;
                     }
                 };
                 requestQueue.add(request);
             }
 
+            {
+                Intent intent = new Intent( Chat_sign_up.this, ChatActivity.class );
+                startActivity( intent );
+            }
         });
 
 

@@ -34,6 +34,10 @@
                   android:label="This_IS_the_signup_page!">
         </activity>
 
+        <activity android:name=".ChatActivity"
+                  android:label="Group_chat_job_title_page!">
+        </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="d120b2f6e40271fb3ee090ffae8c3e345fb1dfe8" />
