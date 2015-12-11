@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class SplashScreen extends AppCompatActivity {
@@ -14,18 +14,18 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
 
-        Button orderButton = (Button) findViewById(R.id.tochat);
+        ImageButton orderButton = (ImageButton) findViewById(R.id.tochat);
 
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SplashScreen.this, ChatActivity.class);
+                Intent intent = new Intent(SplashScreen.this, AllTheChats.class);
                 startActivity(intent);
             }
         });
 
 
-            Button orderButton1 = (Button) findViewById(R.id.tojobs);
+            ImageButton orderButton1 = (ImageButton) findViewById(R.id.tojobs);
 
             orderButton1.setOnClickListener(new View.OnClickListener() {
                 @Override

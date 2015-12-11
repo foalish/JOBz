@@ -18,7 +18,7 @@
 
         <activity
             android:name=".SplashScreen"
-            android:label="Opening the App Splash Screen">
+            android:label="Jobz">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +40,10 @@
 
         <activity android:name=".ChatActivity"
                   android:label="Group_chat_job_title_page!">
+        </activity>
+
+        <activity android:name=".AllTheChats"
+            android:label="All_the_chats">
         </activity>
 
         <meta-data
