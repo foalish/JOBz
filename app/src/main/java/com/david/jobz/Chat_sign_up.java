@@ -32,7 +32,7 @@ public class Chat_sign_up extends AppCompatActivity {
     EditText pass;
     EditText birthdate;
     Switch gender;
-    Button insert, show;
+    Button insert, show, link_to_login, sign_up;
     TextView result;
     RequestQueue requestQueue;
     String insertUrl = "http://217.199.187.199/robswebdevelopercourse.com/social_network/insertUser.php";
@@ -43,36 +43,28 @@ public class Chat_sign_up extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_sign_up);
 
-   //     Button orderButton = (Button)findViewById(R.id.sign_up);
-   //     orderButton.setOnClickListener(new View.OnClickListener() {
-
-   //         @Override
-    //        public void onClick(View view) {
-
-   //             Intent intent = new Intent( Chat_sign_up.this, ChatActivity.class );
-    //            startActivity( intent );
-   //         }
-   //    });
-
-        Button orderButton2 = (Button)findViewById(R.id.link_to_login);
-        orderButton2.setOnClickListener(new View.OnClickListener() {
+        Button orderButton = (Button)findViewById(R.id.sign_up);
+        orderButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent( Chat_sign_up.this, LoginActivity.class );
+                Intent intent = new Intent( Chat_sign_up.this, ChatActivity.class );
                 startActivity( intent );
-            }
-        });
+    }
+      });
 
-        email     =  (EditText) findViewById(R.id.inputEmail);
-        name      =  (EditText) findViewById(R.id.inputUsername);
-        pass      =  (EditText) findViewById(R.id.inputPassword);
-        birthdate =  (EditText) findViewById(R.id.inputBirthdate);
+        email           =  (EditText) findViewById(R.id.inputEmail);
+        name            =  (EditText) findViewById(R.id.inputUsername);
+        pass            =  (EditText) findViewById(R.id.inputPassword);
+        birthdate       =  (EditText) findViewById(R.id.inputBirthdate);
        //   gender    =  (Switch)   findViewById(R.id.inputGender);
-        insert    =  (Button)   findViewById(R.id.insert);
-        show      =  (Button)   findViewById(R.id.show);
-        result    =  (TextView) findViewById(R.id.email_label );
+        insert          =  (Button)   findViewById(R.id.insert);
+        link_to_login   =  (Button)   findViewById(R.id.link_to_login);
+        sign_up         =  (Button)   findViewById(R.id.sign_up);
+
+        show            =  (Button)   findViewById(R.id.show);
+        result          =  (TextView) findViewById(R.id.email_label );
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
@@ -137,14 +129,29 @@ public class Chat_sign_up extends AppCompatActivity {
                      }
                 };
                 requestQueue.add(request);
-            }
 
-            {
                 Intent intent = new Intent( Chat_sign_up.this, ChatActivity.class );
                 startActivity( intent );
             }
         });
 
+        link_to_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                  Intent intent = new Intent( Chat_sign_up.this, LoginActivity.class );
+                    startActivity( intent );
+                }
+             });
+
+        sign_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent( Chat_sign_up.this, ChatActivity.class );
+                startActivity( intent );
+            }
+        });
 
 
 
