@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Jobz</string>
+
+      <string name="cheese_ipsum">A VET is a tough job. you have to like getting bitten by animals...Blah Blah Blah</string>
+    <string name="checkin">Checkin</string>
+    <string name="menu_settings">Settings</string>
 </resources>

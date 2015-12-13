@@ -43,11 +43,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
         name =  (EditText) findViewById(R.id.inputUsername);
         pass =  (EditText) findViewById(R.id.inputPassword);
         //    insert   = (Button)    findViewById(R.id.takemetochat);

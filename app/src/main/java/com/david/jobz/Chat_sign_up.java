@@ -14,13 +14,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,11 +27,11 @@ public class Chat_sign_up extends AppCompatActivity {
     EditText pass;
     EditText birthdate;
     Switch gender;
-    Button insert, show, link_to_login, sign_up;
+    Button insert, link_to_login, sign_up;
     TextView result;
     RequestQueue requestQueue;
     String insertUrl = "http://217.199.187.199/robswebdevelopercourse.com/social_network/insertUser.php";
-    String showUrl =   "http://217.199.187.199/robswebdevelopercourse.com/social_network/showUsers.php";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,45 +58,10 @@ public class Chat_sign_up extends AppCompatActivity {
         link_to_login   =  (Button)   findViewById(R.id.link_to_login);
         sign_up         =  (Button)   findViewById(R.id.sign_up);
 
-        show            =  (Button)   findViewById(R.id.show);
         result          =  (TextView) findViewById(R.id.email_label );
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        show.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                        showUrl, new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray users = response.getJSONArray("users");
-                            for (int i = 0; i < users.length(); i++) {
-                                JSONObject user = users.getJSONObject(i);
-
-                                String email     =  user.getString("inputEmail");
-                                String name      =  user.getString("inputUsername");
-                                String pass      =  user.getString("inputPassword");
-                                String birthdate =  user.getString("inputBirthdate");
-                                String gender    =  user.getString("inputGender");
-                                result.append(email + " " + name + "" + pass + birthdate + " " + gender + "\n");
-                            }
-                            result.append("===\n");
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.append(error.getMessage());
-                    }
-                });
-                requestQueue.add(jsonObjectRequest);
-            }
-        });
 
         insert.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -171,7 +171,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dip"
         android:layout_marginBottom="40dip"
-        android:text="Login here"
+        android:text="Signup (ps.I should be a link)"
         android:onClick="onClick"
         android:layout_below="@+id/degree"
         android:gravity="center"
