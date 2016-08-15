@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.david.jobz"
+    android:versionCode="1"
+    android:versionName="1.0" >
 
-          android:versionCode="1"
-          android:versionName="1.0">
-
-    <uses-sdk/>
+    <uses-sdk />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,35 +14,34 @@
         android:label="My dream job is..."
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-
         <activity
             android:name=".SplashScreen"
-            android:label="Jobz">
-
+            android:label="Jobz" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="Search by Spinner!"  >
+            android:label="Search by Spinner!" >
         </activity>
-
-        <activity android:name=".LoginActivity"
-                  android:label="This_IS_the_login_page!">
+        <activity
+            android:name=".LoginActivity"
+            android:label="This_IS_the_login_page!" >
         </activity>
-
-        <activity android:name=".Chat_sign_up"
-                  android:label="This_IS_the_signup_page!">
+        <activity
+            android:name=".Chat_sign_up"
+            android:label="This_IS_the_signup_page!" >
         </activity>
-
-        <activity android:name=".ChatActivity"
-                  android:label="Group_chat_job_title_page!">
+        <activity
+            android:name=".ChatActivity"
+            android:label="Group_chat_job_title_page!" >
         </activity>
-
-        <activity android:name=".AllTheChats"
-            android:label="All_the_chats">
+        <activity
+            android:name=".AllTheChats"
+            android:label="All_the_chats" >
         </activity>
 
         <meta-data

@@ -2,6 +2,8 @@
     <string name="app_name">Jobz</string>
 
       <string name="cheese_ipsum">A VET is a tough job. you have to like getting bitten by animals...Blah Blah Blah</string>
+    <string name="drummer">You get to make a loud noise and go deaf...Blah Blah Blah</string>
+    <string name="primary_school_teacher">Teaching the same kids all day every day and putting up with rubbish from 10 year olds</string>
     <string name="checkin">Checkin</string>
     <string name="menu_settings">Settings</string>
 </resources>
